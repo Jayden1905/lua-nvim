@@ -20,6 +20,5 @@ require("user.alpha")
 require("user.whichkey")
 require("user.autocommands")
 require("user.colorizer")
-require("user.telescope_explorer")
 
 vim.cmd("colorscheme onedark")
