@@ -1,4 +1,5 @@
 local options = {
+  modifiable = true,
   backup = false, -- creates a backup file
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 2, -- more space in the neovim command line for displaying messages
@@ -16,7 +17,7 @@ local options = {
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
   swapfile = false, -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
+  termguicolors = true, -- set term gui colors (most terminals support this)
   timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true, -- enable persistent undo
   updatetime = 300, -- faster completion (4000ms default)
@@ -35,6 +36,10 @@ local options = {
   guifont = "monospace:h17", -- the font used in graphical neovim applications
 }
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.opt.fillchars.eob = " "
+
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
@@ -42,7 +47,5 @@ for k, v in pairs(options) do
 end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd('  set path+=/work,')
-vim.cmd("set modifiable")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
