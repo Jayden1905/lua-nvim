@@ -1,9 +1,9 @@
 vim.cmd [[
-  augroup remember_folds
+  augroup AutoSaveGroup
     autocmd!
-    autocmd BufWinLeave * mkview
-    autocmd BufWinEnter * silent! loadview
-  augroup END
+    autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre ?* nested silent! mkview!
+    autocmd BufWinEnter ?* silent! loadview
+  augroup end
 
   augroup _general_settings
     autocmd!
