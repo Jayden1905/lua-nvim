@@ -48,4 +48,11 @@ end
 
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
-vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+vim.cmd([[set background=dark]])
+vim.o.termguicolors = true
+vim.api.nvim_command([[
+    augroup ChangeBackgroudColour
+        autocmd colorscheme * :hi normal guibg=#00000
+    augroup END
+]])
+-- vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work

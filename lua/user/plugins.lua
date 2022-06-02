@@ -54,7 +54,7 @@ return packer.startup(function(use)
   use("akinsho/toggleterm.nvim")
   use("ahmedkhalf/project.nvim")
   use("lewis6991/impatient.nvim")
-  use("lukas-reineke/indent-blankline.nvim")
+  -- use("lukas-reineke/indent-blankline.nvim")
   use("goolord/alpha-nvim")
   use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
   use("folke/which-key.nvim")
@@ -67,7 +67,7 @@ return packer.startup(function(use)
   use("Mofiqul/vscode.nvim")
   use("joshdick/onedark.vim")
   use("shaunsingh/moonlight.nvim")
-  use('folke/tokyonight.nvim')
+  use("folke/tokyonight.nvim")
   -- If you are using Packer
 
   -- cmp plugins
@@ -81,9 +81,10 @@ return packer.startup(function(use)
   -- snippets
   use("L3MON4D3/LuaSnip") --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-  use { 'dsznajder/vscode-es7-javascript-react-snippets',
-    run = 'yarn install --frozen-lockfile && yarn compile'
-  }
+  use({
+    "dsznajder/vscode-es7-javascript-react-snippets",
+    run = "yarn install --frozen-lockfile && yarn compile",
+  })
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP
