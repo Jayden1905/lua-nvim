@@ -21,5 +21,6 @@ require("user.alpha")
 require("user.whichkey")
 require("user.autocommands")
 require("user.colorizer")
+require("user.lsp.settings.emmet_ls")
 
 vim.cmd("colorscheme tokyonight")
