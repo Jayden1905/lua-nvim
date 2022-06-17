@@ -26,44 +26,6 @@ end
 local icons = require("user.icons")
 
 local kind_icons = icons.kind
--- local kind_icons = {
---   Text = "",
---   Method = "",
---   Function = "",
---   Constructor = "",
---   Field = "ﰠ",
---   Variable = "",
---   Class = "ﴯ",
---   Interface = "",
---   Module = "",
---   Property = "ﰠ",
---   Unit = "塞",
---   Value = "",
---   Enum = "",
---   Keyword = "",
---   Snippet = "",
---   Color = "",
---   File = "",
---   Refeence = "",
---   Folder = "",
---   EnumMember = "",
---   Constant = "",
---   Struct = "פּ",
---   Event = "",
---   Operator = "",
---   TypeParameter = "",
--- }
--- find more here: https://www.nerdfonts.com/cheat-sheet
-local border = {
-  { "╭", "CmpBorder" },
-  { "─", "CmpBorder" },
-  { "╮", "CmpBorder" },
-  { "│", "CmpBorder" },
-  { "╯", "CmpBorder" },
-  { "─", "CmpBorder" },
-  { "╰", "CmpBorder" },
-  { "│", "CmpBorder" },
-}
 
 cmp.setup({
   snippet = {
@@ -117,10 +79,10 @@ cmp.setup({
     }),
   },
   formatting = {
-    fields = { "abbr", "kind", "menu" },
+    fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("", kind_icons[vim_item.kind])
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 
       if entry.source.name == "cmp_tabnine" then
         -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
@@ -128,7 +90,7 @@ cmp.setup({
         -- end
         vim_item.kind = icons.misc.Robot
       end
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
@@ -153,5 +115,3 @@ cmp.setup({
     native_menu = false,
   },
 })
-
-vim.cmd([[highlight! default link CmpItemKind CmpItemMenuDefault]])
