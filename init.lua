@@ -22,4 +22,4 @@ require("user.whichkey")
 require("user.autocommands")
 require("user.colorizer")
 
-vim.cmd("colorscheme Neosolarized")
+vim.cmd("colorscheme tokyonight")
