@@ -23,4 +23,4 @@ require("user.autocommands")
 require("user.colorizer")
 require("user.lsp.settings.emmet_ls")
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme Neosolarized")

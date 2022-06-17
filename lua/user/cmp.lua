@@ -23,33 +23,36 @@ local check_backspace = function()
 end
 
 --   פּ ﯟ   some other good icons
-local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "ﰠ",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "塞",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Refeence = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "פּ",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
+local icons = require("user.icons")
+
+local kind_icons = icons.kind
+-- local kind_icons = {
+--   Text = "",
+--   Method = "",
+--   Function = "",
+--   Constructor = "",
+--   Field = "ﰠ",
+--   Variable = "",
+--   Class = "ﴯ",
+--   Interface = "",
+--   Module = "",
+--   Property = "ﰠ",
+--   Unit = "塞",
+--   Value = "",
+--   Enum = "",
+--   Keyword = "",
+--   Snippet = "",
+--   Color = "",
+--   File = "",
+--   Refeence = "",
+--   Folder = "",
+--   EnumMember = "",
+--   Constant = "",
+--   Struct = "פּ",
+--   Event = "",
+--   Operator = "",
+--   TypeParameter = "",
+-- }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 local border = {
   { "╭", "CmpBorder" },
@@ -114,10 +117,17 @@ cmp.setup({
     }),
   },
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.kind = string.format("", kind_icons[vim_item.kind])
+
+      if entry.source.name == "cmp_tabnine" then
+        -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+        -- menu = entry.completion_item.data.detail .. " " .. menu
+        -- end
+        vim_item.kind = icons.misc.Robot
+      end
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
