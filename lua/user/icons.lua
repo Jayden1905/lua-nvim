@@ -99,8 +99,8 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 		misc = {
 			Robot = "ﮧ ",
 			Squirrel = " ",
-			Tag = "",
-			Watch = "",
+			Tag = " ",
+			Watch = " ",
 		},
 	}
 else

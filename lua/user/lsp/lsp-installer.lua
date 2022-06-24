@@ -12,6 +12,7 @@ local servers = {
 	"tsserver",
 	"pyright",
 	"jsonls",
+	"jdtls",
 }
 
 local settings = {

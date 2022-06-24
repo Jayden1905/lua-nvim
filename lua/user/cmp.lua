@@ -73,7 +73,7 @@ cmp.setup({
 		}),
 	}),
 	formatting = {
-		fields = { "kind", "abbr", "menu" },
+		fields = { "abbr", "kind", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = kind_icons[vim_item.kind]
@@ -92,12 +92,12 @@ cmp.setup({
 
 			-- NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[Lua]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-				emoji = "[Emoji]",
+				nvim_lsp = "",
+				nvim_lua = "",
+				luasnip = "",
+				buffer = "",
+				path = "",
+				emoji = "",
 			})[entry.source.name]
 			return vim_item
 		end,
