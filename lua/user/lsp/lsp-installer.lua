@@ -73,6 +73,16 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", pyright_opts, opts)
 	end
 
+	if server == "solang" then
+		local solang_opts = require("user.lsp.settings.solang")
+		opts = vim.tbl_deep_extend("force", solang_opts, opts)
+	end
+
+	if server == "solc" then
+		local solc_opts = require("user.lsp.settings.solc")
+		opts = vim.tbl_deep_extend("force", solc_opts, opts)
+	end
+
 	lspconfig[server].setup(opts)
 end
 
