@@ -13,6 +13,7 @@ local servers = {
 	"pyright",
 	"jsonls",
 	"jdtls",
+	"tailwindcss",
 }
 
 local settings = {
