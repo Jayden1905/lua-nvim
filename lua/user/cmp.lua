@@ -26,7 +26,7 @@ local icons = require("user.icons")
 
 local kind_icons = icons.kind
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 cmp.setup({
 	snippet = {
@@ -121,6 +121,16 @@ cmp.setup({
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
+	},
+	window = {
+		documentation = {
+			border = "rounded",
+			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
+		completion = {
+			border = "rounded",
+			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
 	},
 	experimental = {
 		ghost_text = true,

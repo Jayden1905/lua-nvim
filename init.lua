@@ -23,5 +23,7 @@ require("user.whichkey")
 require("user.autocommands")
 require("user.colorizer")
 require("user.winbar")
+require("user.indentline")
 
-vim.cmd("colorscheme Neosolarized")
+-- vim.cmd("colorscheme Neosolarized")
+vim.cmd("colorscheme onedarkpro")
