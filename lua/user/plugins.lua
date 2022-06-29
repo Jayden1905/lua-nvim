@@ -77,9 +77,6 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
-	use("lunarvim/darkplus.nvim")
-	use("dracula/vim")
-	use("Mofiqul/vscode.nvim")
 	use("joshdick/onedark.vim")
 	use("olimorris/onedarkpro.nvim")
 

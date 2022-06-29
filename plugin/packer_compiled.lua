@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -289,11 +284,6 @@ _G.packer_plugins = {
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  vim = {
-    loaded = true,
-    path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/vim",
-    url = "https://github.com/dracula/vim"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -308,11 +298,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/vscode-es7-javascript-react-snippets",
     url = "https://github.com/dsznajder/vscode-es7-javascript-react-snippets"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,
