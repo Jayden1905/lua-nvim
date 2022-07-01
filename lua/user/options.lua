@@ -18,7 +18,7 @@ local options = {
 	splitright = true, -- force all vertical splits to go to the right of current window
 	swapfile = false, -- creates a swapfile
 	termguicolors = true, -- set term gui colors (most terminals support this)
-	timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
+	timeoutlen = 1, -- time to wait for a mapped sequence to complete (in milliseconds)
 	undofile = false, -- enable persistent undo
 	updatetime = 300, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -46,6 +46,8 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+vim.cmd("set ttimeout")
+vim.cmd("set ttyfast")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set background=dark]])

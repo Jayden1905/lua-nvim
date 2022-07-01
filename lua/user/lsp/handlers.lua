@@ -59,6 +59,7 @@ local function lsp_highlight_document(client)
       false
     )
   end
+
 end
 
 local function lsp_keymaps(bufnr)
