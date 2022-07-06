@@ -33,7 +33,7 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 10, -- is one of my fav
 	sidescrolloff = 10,
-	guifont = "monospace:h17", -- the font used in graphical neovim applications
+	guifont = "SauceCodePro Nerd Font:h18", -- the font used in graphical neovim applications
 }
 
 vim.g.loaded_netrw = 1
@@ -52,9 +52,9 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set background=dark]])
 vim.o.termguicolors = true
-vim.api.nvim_command([[
-    augroup ChangeBackgroudColour
-        autocmd colorscheme * :hi normal guibg=#00000
-    augroup END
-]])
--- vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+-- vim.api.nvim_command([[
+--     augroup ChangeBackgroudColour
+--         autocmd colorscheme * :hi normal guibg=#00000
+--     augroup END
+-- ]])
+vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
