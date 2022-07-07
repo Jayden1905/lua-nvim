@@ -214,6 +214,11 @@ _G.packer_plugins = {
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-jdtls.git"] = {
+    loaded = true,
+    path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/nvim-jdtls.git",
+    url = "https://gitcode.net/lxyoucan/nvim-jdtls"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/Users/kyawzayannaing/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",

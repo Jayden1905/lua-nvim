@@ -124,11 +124,11 @@ cmp.setup({
 	},
 	window = {
 		documentation = {
-			border = "rounded",
+			-- border = "rounded",
 			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 		completion = {
-			border = "rounded",
+			-- border = "rounded",
 			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
