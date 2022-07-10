@@ -1,6 +1,5 @@
 return {
 	cmd = {
-
 		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
@@ -19,7 +18,7 @@ return {
 		"-jar",
 		"/home/vnc/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
 		"-configuration",
-		"/home/vnc/.local/share/nvim/lsp_servers/jdtls/config_linux",
+		"/home/vnc/.local/share/nvim/lsp_servers/jdtls/config_mac",
 		"-data",
 		"/home/vnc/.local/share/nvim/lsp_servers/jdtls/workspace/folder",
 	},
