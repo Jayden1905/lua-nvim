@@ -53,3 +53,9 @@ vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set background=dark]])
 vim.o.termguicolors = true
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
+
+-- vim.api.nvim_command([[
+--     augroup ChangeBackgroudColour
+--         autocmd colorscheme * :hi normal guibg=#0000000
+--     augroup END
+-- ]])

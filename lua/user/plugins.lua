@@ -76,6 +76,8 @@ return packer.startup(function(use)
 	-- use("RRethy/vim-illuminate")
 
 	-- Colorschemes
+	-- Packer:
+	use("Mofiqul/vscode.nvim")
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
 	use("marko-cerovac/material.nvim")
 	use("joshdick/onedark.vim")
@@ -101,7 +103,13 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("ray-x/lsp_signature.nvim")
-	use("https://gitcode.net/lxyoucan/nvim-jdtls.git")
+	use("mfussenegger/nvim-jdtls")
+
+	-- Dap
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
+	-- use("Pocco81/dap-buddy.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

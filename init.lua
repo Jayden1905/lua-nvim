@@ -24,6 +24,6 @@ require("user.colorizer")
 require("user.winbar")
 require("user.indentline")
 require("user.material")
+require("user.dap")
 
-vim.cmd("colorscheme Neosolarized")
--- vim.cmd("colorscheme onedarkpro")
+vim.cmd("colorscheme vscode")

@@ -190,7 +190,7 @@ else
 			CloudDownload = " ",
 		},
 		diagnostics = {
-			Error = "",
+			Error = "",
 			Warning = "",
 			Information = "",
 			Question = "",

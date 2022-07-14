@@ -66,3 +66,32 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+vim.cmd([[ 
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+exec "w"
+if &filetype == 'c'
+exec "!gcc % -o %<"
+exec "!time ./%<"
+elseif &filetype == 'cpp'
+exec "!g++ % -o %<"
+exec "!time ./%<"
+elseif &filetype == 'java'
+exec "!javac %"
+exec "!time java -cp %:p:h %:t:r"
+elseif &filetype == 'sh'
+exec "!time bash %"
+elseif &filetype == 'python'
+exec "!time python3 %"
+elseif &filetype == 'html'
+exec "!open -a "Google Chrome" index.html"
+elseif &filetype == 'go'
+exec "!go build %<"
+exec "!time go run %"
+elseif &filetype == 'mkd'
+exec "!~/.vim/markdown.pl % > %.html &"
+exec "!firefox %.html &"
+endif
+endfunc
+]])
