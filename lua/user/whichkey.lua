@@ -114,6 +114,7 @@ local mappings = {
 			"Conditonal Breakpoint",
 		},
 		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+		e = { "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear breakpoints" },
 		i = { "<cmd>lua require'dap'.step_into()<cr>", "Into" },
 		o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
 		O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
