@@ -8,6 +8,13 @@ if not dap_ui_status_ok then
 	return
 end
 
+-- dap.defaults.fallback.external_terminal = {
+-- 	command = "/opt/homebrew/bin/fish",
+-- 	args = { "-e" },
+-- }
+dap.defaults.fallback.force_external_terminal = true
+dap.defaults.fallback.focus_terminal = true
+
 require("nvim-dap-virtual-text").setup({
 	enabled = true, -- enable this plugin (the default)
 	enabled_commands = true, -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)

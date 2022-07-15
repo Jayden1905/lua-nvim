@@ -178,7 +178,6 @@ local mappings = {
 			"Workspace Symbols",
 		},
 	},
-	r = { "<cmd>call CompileRunGcc()<cr>", "Run" },
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },

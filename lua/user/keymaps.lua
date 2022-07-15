@@ -68,7 +68,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 vim.cmd([[ 
-map <F5> :call CompileRunGcc()<CR>
+map <leader>rcc :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 exec "w"
 if &filetype == 'c'
@@ -79,7 +79,8 @@ exec "!g++ % -o %<"
 exec "!time ./%<"
 elseif &filetype == 'java'
 exec "!javac %"
-exec "!time java -cp %:p:h %:t:r"
+" exec "!time java -cp %:p:h:t %:r"
+exec "!time java %:r"
 elseif &filetype == 'sh'
 exec "!time bash %"
 elseif &filetype == 'python'
@@ -94,4 +95,24 @@ exec "!~/.vim/markdown.pl % > %.html &"
 exec "!firefox %.html &"
 endif
 endfunc
+]])
+
+vim.cmd([[ 
+augroup exe_code
+  autocmd!
+  autocmd FileType java nnoremap <buffer> <leader>r
+              \ :15sp<CR> :!javac %<CR> :term time java -cp . %<CR> :startinsert<CR>
+
+  autocmd FileType javascript nnoremap <buffer> <leader>r
+              \ :15sp<CR> :term time node %<CR> :startinsert<CR>
+
+  autocmd FileType typescript nnoremap <buffer> <leader>r
+              \ :15sp<CR> :term time ts-node %<CR> :startinsert<CR>
+
+  autocmd FileType python nnoremap <buffer> <leader>r
+              \ :15sp<CR> :term time python3 %<CR> :startinsert<CR>
+
+  autocmd FileType html nnoremap <buffer> <leader>r
+              \ :15sp<CR> :term live-server<CR> :startinsert<CR>
+augroup END
 ]])
