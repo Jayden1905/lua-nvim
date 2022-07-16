@@ -73,7 +73,8 @@ return packer.startup(function(use)
 		"zbirenbaum/copilot-cmp",
 		module = "copilot_cmp",
 	})
-	-- use("RRethy/vim-illuminate")
+	use("RRethy/vim-illuminate")
+	-- use({ "fgheng/winbar.nvim" })
 
 	-- Colorschemes
 	-- Packer:
