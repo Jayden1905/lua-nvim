@@ -7,8 +7,8 @@ vim.cmd([[
 
   augroup _general_settings
     autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
+    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
   augroup end
@@ -27,7 +27,7 @@ vim.cmd([[
 
   augroup _auto_resize
     autocmd!
-    autocmd VimResized * tabdo wincmd = 
+    autocmd VimResized * tabdo wincmd =
   augroup end
 
   augroup _alpha
@@ -40,8 +40,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
 	callback = function()
 		vim.cmd([[
-      nnoremap <silent> <buffer> q :close<CR> 
-      set nobuflisted 
+      nnoremap <silent> <buffer> q :close<CR>
+      set nobuflisted
     ]])
 	end,
 })
@@ -81,6 +81,17 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		vim.cmd("set formatoptions-=cro")
 	end,
 })
+
+if vim.fn.has("nvim-0.8") == 1 then
+	vim.api.nvim_create_autocmd(
+		{ "CursorMoved", "CursorHold", "BufWinEnter", "BufFilePost", "InsertEnter", "BufWritePost", "TabClosed" },
+		{
+			callback = function()
+				require("user.winbar").get_winbar()
+			end,
+		}
+	)
+end
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()

@@ -34,6 +34,9 @@ local options = {
 	scrolloff = 10, -- is one of my fav
 	sidescrolloff = 10,
 	guifont = "SauceCodePro Nerd Font:h18", -- the font used in graphical neovim applications
+	laststatus = 3,
+	showcmd = false,
+	ruler = false,
 }
 
 vim.g.loaded_netrw = 1

@@ -75,14 +75,14 @@ return packer.startup(function(use)
 	})
 	use("RRethy/vim-illuminate")
 	-- use({ "fgheng/winbar.nvim" })
+	use("SmiteshP/nvim-navic")
+	-- use("SmiteshP/nvim-gps")
 
 	-- Colorschemes
 	-- Packer:
 	use("Mofiqul/vscode.nvim")
 	use("lunarvim/colorschemes") -- A bunch of colorschemes you can try out
-	use("marko-cerovac/material.nvim")
-	use("joshdick/onedark.vim")
-	use("olimorris/onedarkpro.nvim")
+	use("LunarVim/onedarker.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
