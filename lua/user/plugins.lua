@@ -74,9 +74,8 @@ return packer.startup(function(use)
 		module = "copilot_cmp",
 	})
 	use("RRethy/vim-illuminate")
-	-- use({ "fgheng/winbar.nvim" })
 	use("SmiteshP/nvim-navic")
-	-- use("SmiteshP/nvim-gps")
+	use("p00f/nvim-ts-rainbow")
 
 	-- Colorschemes
 	-- Packer:

@@ -82,7 +82,7 @@ cmp.setup({
 		}),
 	}),
 	formatting = {
-		fields = { "abbr", "kind", "menu" },
+		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = kind_icons[vim_item.kind]
@@ -98,26 +98,26 @@ cmp.setup({
 
 			-- NOTE: order matters
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
-				emoji = "",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[Lua]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				path = "[Path]",
+				emoji = "[Emoji]",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
-		{ name = "crates", group_index = 1 },
-		{ name = "nvim_lsp", group_index = 2 },
-		{ name = "nvim_lua", group_index = 2 },
-		{ name = "copilot", group_index = 2 },
-		{ name = "luasnip", group_index = 2 },
-		{ name = "buffer", group_index = 2 },
-		{ name = "cmp_tabnine", group_index = 2 },
-		{ name = "path", group_index = 2 },
-		{ name = "emoji", group_index = 2 },
+		{ name = "crates", group_index = 1, priority = 6 },
+		{ name = "nvim_lsp", group_index = 2, priority = 7 },
+		{ name = "nvim_lua", group_index = 2, priority = 7 },
+		{ name = "copilot", group_index = 2, priority = 7 },
+		{ name = "luasnip", group_index = 2, priority = 8 },
+		{ name = "buffer", group_index = 2, priority = 6 },
+		{ name = "cmp_tabnine", group_index = 2, priority = 7 },
+		{ name = "path", group_index = 2, priority = 6 },
+		{ name = "emoji", group_index = 2, priority = 6 },
 	},
 	sorting = {
 		priority_weight = 2,
@@ -145,11 +145,11 @@ cmp.setup({
 	window = {
 		documentation = {
 			border = "rounded",
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 		completion = {
 			border = "rounded",
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			-- winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
 	experimental = {

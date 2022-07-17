@@ -101,16 +101,16 @@ vim.cmd([[
 augroup exe_code
   autocmd!
   autocmd FileType java nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :!javac %<CR> :term time java -cp . %<CR> :startinsert<CR>
+              \ :65vsp<CR> :!javac %<CR> :term java -cp . %<CR> :startinsert<CR>
 
   autocmd FileType javascript nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :term time node %<CR> :startinsert<CR>
+              \ :65vsp<CR> :term node %<CR> :startinsert<CR>
 
   autocmd FileType typescript nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :term time ts-node %<CR> :startinsert<CR>
+              \ :65vsp<CR> :term ts-node %<CR> :startinsert<CR>
 
   autocmd FileType python nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :term time python3 %<CR> :startinsert<CR>
+              \ :65vsp<CR> :term python3 %<CR> :startinsert<CR>
 
   autocmd FileType html nnoremap <buffer> <leader>r
               \ :65sp<CR> :term live-server<CR> :startinsert<CR>
