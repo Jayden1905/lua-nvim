@@ -36,6 +36,8 @@ vim.cmd([[
   augroup end
 ]])
 
+vim.cmd([[ autocmd CursorHold * lua vim.diagnostic.open_float() ]])
+
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
 	callback = function()

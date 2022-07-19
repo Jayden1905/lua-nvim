@@ -120,5 +120,11 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+vim.cmd([[
+    augroup format_on_save
+      autocmd! 
+      autocmd BufWritePre * lua vim.lsp.buf.format() 
+    augroup end
+]])
 
 return M
