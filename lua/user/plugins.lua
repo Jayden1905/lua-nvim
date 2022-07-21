@@ -79,6 +79,19 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("ThePrimeagen/harpoon")
 	use("folke/zen-mode.nvim")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({
+		"lalitmee/browse.nvim",
+		requires = { "nvim-telescope/telescope.nvim" },
+	})
+	use({ "stevearc/dressing.nvim" })
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 
 	-- Colorschemes
 	-- Packer:

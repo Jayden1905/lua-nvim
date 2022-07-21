@@ -98,6 +98,7 @@ local m_mappings = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+	b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w<CR>", "Save" },
 	["q"] = { "<cmd>q<CR>", "Quit" },
@@ -107,19 +108,33 @@ local mappings = {
 	--   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 	--   "Find files",
 	-- },
-	["f"] = { "<cmd>Telescope find_files<cr>", "Find Files" },
-	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+	f = {
+		name = "Find",
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		f = { "<cmd>Telescope find_files<cr>", "Find files" },
+		t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+		s = { "<cmd>Telescope grep_string<cr>", "Find String" },
+		h = { "<cmd>Telescope help_tags<cr>", "Help" },
+		H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+		i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+		l = { "<cmd>Telescope resume<cr>", "Last Search" },
+		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+		R = { "<cmd>Telescope registers<cr>", "Registers" },
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		C = { "<cmd>Telescope commands<cr>", "Commands" },
+	},
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["z"] = { "<cmd>ZenMode<cr>", "Zen" },
 
-	b = {
-		name = "Buffers",
-		b = {
-			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			"Search Buffers",
-		},
-		n = { "<cmd>BufferLineMoveNext<cr>", "Swap current next" },
-		p = { "<cmd>BufferLineMovePrev<cr>", "Swap current previous" },
+	B = {
+		name = "Browse",
+		i = { "<cmd>BrowseInputSearch<cr>", "Input Search" },
+		b = { "<cmd>Browse<cr>", "Browse" },
+		d = { "<cmd>BrowseDevdocsSearch<cr>", "Devdocs" },
+		f = { "<cmd>BrowseDevdocsFiletypeSearch<cr>", "Devdocs Filetype" },
+		m = { "<cmd>BrowseMdnSearch<cr>", "Mdn" },
 	},
 
 	p = {
@@ -176,10 +191,7 @@ local mappings = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
-		w = {
-			"<cmd>Telescope lsp_workspace_diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
+		w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
@@ -206,16 +218,14 @@ local mappings = {
 		t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
 		u = { "<cmd>LuaSnipUnlinkCurrent<cr>", "Unlink Snippet" },
 	},
+
 	s = {
-		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		name = "Session",
+		s = { "<cmd>SaveSession<cr>", "Save" },
+		r = { "<cmd>RestoreSession<cr>", "Restore" },
+		x = { "<cmd>DeleteSession<cr>", "Delete" },
+		f = { "<cmd>Autosession search<cr>", "Find" },
+		d = { "<cmd>Autosession delete<cr>", "Find Delete" },
 	},
 
 	t = {

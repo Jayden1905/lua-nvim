@@ -45,7 +45,7 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
-		disable = { "xml", "markdown" },
+		-- disable = { "xml", "markdown" },
 	},
 	rainbow = {
 		enable = true,

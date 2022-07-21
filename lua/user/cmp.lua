@@ -13,6 +13,7 @@ local compare = require("cmp.config.compare")
 require("luasnip/loaders/from_vscode").lazy_load()
 require("luasnip").filetype_extend("javascript", { "javascriptreact" })
 require("luasnip").filetype_extend("typescript", { "typescriptreact" })
+require("luasnip").filetype_extend("html", { "markdown" })
 
 local check_backspace = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -29,6 +30,7 @@ vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 
 cmp.setup({
+	--insertTextFormat = InsertTextFormat.Snippet,
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -48,7 +50,10 @@ cmp.setup({
 		}),
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -113,7 +118,7 @@ cmp.setup({
 		{ name = "nvim_lsp", group_index = 2, priority = 7 },
 		{ name = "nvim_lua", group_index = 2, priority = 7 },
 		{ name = "copilot", group_index = 2, priority = 7 },
-		{ name = "luasnip", group_index = 2, priority = 8 },
+		{ name = "luasnip", group_index = 2, priority = 6 },
 		{ name = "buffer", group_index = 2, priority = 6 },
 		{ name = "cmp_tabnine", group_index = 2, priority = 7 },
 		{ name = "path", group_index = 2, priority = 6 },

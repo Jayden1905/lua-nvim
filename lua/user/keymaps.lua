@@ -10,15 +10,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
--- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -60,15 +51,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
 vim.cmd([[ 
-map <leader>rcc :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 exec "w"
 if &filetype == 'c'
@@ -104,10 +87,10 @@ augroup exe_code
               \ :65vsp<CR> :!javac %<CR> :term java -cp . %<CR> :startinsert<CR>
 
   autocmd FileType javascript nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :term node %<CR> :startinsert<CR>
+              \ :65vsp<CR> :term bun %<CR> :startinsert<CR>
 
   autocmd FileType typescript nnoremap <buffer> <leader>r
-              \ :65vsp<CR> :term ts-node %<CR> :startinsert<CR>
+              \ :65vsp<CR> :term bun %<CR> :startinsert<CR>
 
   autocmd FileType python nnoremap <buffer> <leader>r
               \ :65vsp<CR> :term python3 %<CR> :startinsert<CR>
