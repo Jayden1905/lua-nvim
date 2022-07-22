@@ -92,6 +92,9 @@ return packer.startup(function(use)
 	use({ "stevearc/dressing.nvim" })
 	use("rmagatti/auto-session")
 	use("rmagatti/session-lens")
+	use("karb94/neoscroll.nvim")
+	use("tamago324/lir.nvim")
+	use("tamago324/lir-git-status.nvim")
 
 	-- Colorschemes
 	-- Packer:
