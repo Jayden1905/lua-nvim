@@ -115,7 +115,7 @@ M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 vim.cmd([[
     augroup format_on_save
       autocmd!
-      autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 5000 })
+      autocmd BufWritePre * lua vim.lsp.buf.format()
     augroup end
 ]])
 

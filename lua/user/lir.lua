@@ -7,9 +7,9 @@ local actions = require("lir.actions")
 local mark_actions = require("lir.mark.actions")
 local clipboard_actions = require("lir.clipboard.actions")
 
-require("lir.git_status").setup({
-	show_ignored = false,
-})
+-- require("lir.git_status").setup({
+-- 	show_ignored = false,
+-- })
 
 lir.setup({
 	show_hidden_files = true,
@@ -72,7 +72,7 @@ lir.setup({
 		)
 
 		-- echo cwd
-		-- vim.api.nvim_echo({ { vim.fn.expand "%:p", "Normal" } }, false, {})
+		vim.api.nvim_echo({ { vim.fn.expand("%:p"), "Normal" } }, false, {})
 	end,
 })
 

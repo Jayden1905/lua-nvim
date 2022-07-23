@@ -76,6 +76,8 @@ dap.configurations.javascript = {
 -- 	},
 -- }
 
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+
 require("dapui").setup({
 	icons = { expanded = "▾", collapsed = "▸" },
 	mappings = {

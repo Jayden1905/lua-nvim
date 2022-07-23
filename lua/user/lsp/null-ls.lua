@@ -16,7 +16,7 @@ null_ls.setup({
 		formatting.prettier.with({
 			extra_filetypes = { "toml", "solidity" },
 		}),
-		formatting.black.with({ extra_args = { "--no-semi", "--fast" } }),
+		formatting.black,
 		formatting.stylua,
 		formatting.google_java_format,
 	},
