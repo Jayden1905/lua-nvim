@@ -47,7 +47,7 @@ dial_config.augends:register_group {
     augend.constant.alias.bool, -- boolean value (true <-> false)
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
-    augend.semver.alias.semver
+    augend.semver.alias.semver,
   },
 }
 
@@ -61,5 +61,5 @@ vim.api.nvim_set_keymap("v", "<C-x>", map.dec_normal "visual", { noremap = true 
 
 vim.cmd [[
   " enable only for specific FileType
-  autocmd FileType typescript,javascript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-a>", require("dial.map").inc_normal("typescript"), {noremap = true})
+  " autocmd FileType typescript,javascript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-a>", require("dial.map").inc_normal("typescript"), {noremap = true})
 ]]

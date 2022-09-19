@@ -8,10 +8,10 @@ if not snip_status_ok then
   return
 end
 
-local tabnine_status_ok, _ = pcall(require, "user.tabnine")
-if not tabnine_status_ok then
-  return
-end
+-- local tabnine_status_ok, _ = pcall(require, "user.tabnine")
+-- if not tabnine_status_ok then
+--   return
+-- end
 
 local buffer_fts = {
   "markdown",
@@ -48,7 +48,7 @@ local icons = require "user.icons"
 local kind_icons = icons.kind
 
 vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
-vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
 vim.api.nvim_set_hl(0, "CmpItemKindEmoji", { fg = "#FDE030" })
 vim.api.nvim_set_hl(0, "CmpItemKindCrate", { fg = "#F64D00" })
 
@@ -138,10 +138,11 @@ cmp.setup {
       -- Kind icons
       vim_item.kind = kind_icons[vim_item.kind]
 
-      if entry.source.name == "cmp_tabnine" then
-        vim_item.kind = icons.misc.Robot
-        vim_item.kind_hl_group = "CmpItemKindTabnine"
-      end
+      -- if entry.source.name == "cmp_tabnine" then
+      --   vim_item.kind = icons.misc.Robot
+      --   vim_item.kind_hl_group = "CmpItemKindTabnine"
+      -- end
+
       if entry.source.name == "copilot" then
         vim_item.kind = icons.git.Octoface
         vim_item.kind_hl_group = "CmpItemKindCopilot"
@@ -175,97 +176,41 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "crates", group_index = 1 },
-    {
-      name = "copilot",
-      -- keyword_length = 0,
-      max_item_count = 3,
-      trigger_characters = {
-        {
-          ".",
-          ":",
-          "(",
-          "'",
-          '"',
-          "[",
-          ",",
-          "#",
-          "*",
-          "@",
-          "|",
-          "=",
-          "-",
-          "{",
-          "/",
-          "\\",
-          "+",
-          "?",
-          " ",
-          -- "\t",
-          -- "\n",
-        },
-      },
-      group_index = 2,
-    },
-    {
-      name = "nvim_lsp",
-      filter = function(entry, ctx)
-        local kind = require("cmp.types.lsp").CompletionItemKind[entry:get_kind()]
-        if kind == "Snippet" and ctx.prev_context.filetype == "java" then
-          return true
-        end
-
-        if kind == "Text" then
-          return true
-        end
-      end,
-      group_index = 2,
-    },
-    { name = "nvim_lua", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    {
-      name = "buffer",
-      group_index = 2,
-      filter = function(entry, ctx)
-        if not contains(buffer_fts, ctx.prev_context.filetype) then
-          return true
-        end
-      end,
-    },
-    { name = "cmp_tabnine", group_index = 2 },
-    { name = "path", group_index = 2 },
-    { name = "emoji", group_index = 2 },
-    { name = "lab.quick_data", keyword_length = 4, group_index = 2 },
+    { name = "nvim_lsp" },
+    -- { name = 'vsnip' }, -- For vsnip users.
+    { name = "luasnip" }, -- For luasnip users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
   },
   sorting = {
-    priority_weight = 2,
-    comparators = {
-      -- require("copilot_cmp.comparators").prioritize,
-      -- require("copilot_cmp.comparators").score,
-      compare.offset,
-      compare.exact,
-      -- compare.scopes,
-      compare.score,
-      compare.recently_used,
-      compare.locality,
-      -- compare.kind,
-      compare.sort_text,
-      compare.length,
-      compare.order,
-      -- require("copilot_cmp.comparators").prioritize,
-      -- require("copilot_cmp.comparators").score,
-    },
+    -- priority_weight = 2,
+    -- comparators = {
+    --   -- require("copilot_cmp.comparators").prioritize,
+    --   -- require("copilot_cmp.comparators").score,
+    --   compare.offset,
+    --   compare.exact,
+    --   -- compare.scopes,
+    --   compare.score,
+    --   compare.recently_used,
+    --   compare.locality,
+    --   -- compare.kind,
+    --   compare.sort_text,
+    --   compare.length,
+    --   compare.order,
+    --   -- require("copilot_cmp.comparators").prioritize,
+    --   -- require("copilot_cmp.comparators").score,
+    -- },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
   window = {
-    documentation = false,
-    -- documentation = {
-    --   border = "rounded",
-    --   winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-    -- },
+    documentation = true,
+    documentation = {
+      border = "rounded",
+      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
     completion = {
       border = "rounded",
       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
